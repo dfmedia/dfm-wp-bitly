@@ -36,7 +36,8 @@ class Bitly_Command extends WP_CLI_Command {
 			'paged'				=> 0,
 			'cache_results'		=> false,
 			'update_meta_cache'	=> false,
-			'update_term_cache' => false
+			'update_term_cache' => false,
+			'no_found_rows'     => true,
 		);
 
 		if ( $args['published_before'] ) {
