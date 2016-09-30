@@ -213,7 +213,6 @@ class DfmBitly {
 		register_setting( 'bitly_settings', 'bitly_settings', array( $this, 'validate_settings' ) );
 
 		// create a sub menu page within settings menu page
-		print_r( $this->capability );
 		add_submenu_page( 'options-general.php', 'Bit.ly Settings', 'Bit.ly', $this->capability, 'bitly-settings', array( $this, 'settings_page' ) );
 	}
 
