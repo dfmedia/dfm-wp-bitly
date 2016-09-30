@@ -1,0 +1,11 @@
+# Debug plugins
+.DS_Store
+*.log
+*.swp
+.htaccess
+node_modules
+.sass-cache
+.buildpath
+.project
+.settings
+.idea/*

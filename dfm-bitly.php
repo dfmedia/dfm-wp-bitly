@@ -434,7 +434,7 @@ function bitly_process_posts( $hourly_limit = null ) {
 			$query = "
 				SELECT $wpdb->posts.ID
 				FROM $wpdb->posts
-				LEFT JOIN $wpdb->postmeta ON ( $wpdb->posts.ID = $wpdb->postmeta.post_id AND $wpdb->postmeta.meta_key =  'bitly_url' ) 
+				LEFT JOIN $wpdb->postmeta ON ( $wpdb->posts.ID = $wpdb->postmeta.post_id AND $wpdb->postmeta.meta_key =  'bitly_url' )
 				WHERE 1=1
 				AND ( $post_type_sql )
 				AND ( $wpdb->posts.post_status = 'publish' )
