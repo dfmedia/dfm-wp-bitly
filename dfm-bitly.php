@@ -17,17 +17,13 @@ class DfmBitly {
 	// default post types
 	var $post_types = array( 'post', 'page' );
 
-	var $capability;
-
 	/**
 	 * Set our options and some hooks
 	 */
 	function __construct() {
 
 		$this->options = $this->get_options();
-
-		$this->capability = apply_filters( 'dfm_bitly_capability', 'edit_theme_options' );
-
+		
 		add_action( 'admin_menu', array( $this, 'admin_menu') );
 		add_action( 'init', array( $this, 'init' ), 99 ); // run later after post_types have been registered
 
@@ -213,7 +209,7 @@ class DfmBitly {
 		register_setting( 'bitly_settings', 'bitly_settings', array( $this, 'validate_settings' ) );
 
 		// create a sub menu page within settings menu page
-		add_submenu_page( 'options-general.php', 'Bit.ly Settings', 'Bit.ly', $this->capability, 'bitly-settings', array( $this, 'settings_page' ) );
+		add_submenu_page( 'options-general.php', 'Bit.ly Settings', 'Bit.ly', 'manage_options', 'bitly-settings', array( $this, 'settings_page' ) );
 	}
 
 	/**
